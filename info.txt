@@ -1,0 +1,3 @@
+
+1. create 'create poll' route
+2. create 'view polls' route

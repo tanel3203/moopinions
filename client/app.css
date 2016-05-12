@@ -1,0 +1,13 @@
+/* CSS declarations go here */
+body  {
+  padding-top:50px; 
+}
+.polls  {
+  display:flex;
+  flex-flow:row wrap;
+  justify-content:center;
+}
+.poll   {
+  width:25%;
+  margin:20px;
+}
