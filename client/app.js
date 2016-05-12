@@ -5,7 +5,7 @@ Router.configure({
 
   Router.route('/', function () {
     console.log("rendering root /");
-    this.render("", {to:"header"});
+    this.render("login", {to:"header"});
     this.render("welcome", {to:"main"});  
   });
 
@@ -14,8 +14,19 @@ Router.configure({
     this.render("createPoll", {to:"main"});  
   });
 
+  Router.route('/view', function () {
+    console.log("rendering viewPoll /view");
+    this.render("viewPoll", {to:"main"});  
+  });
 
-Template.createPoll.helpers({
+Template.welcome.helpers({
+  loggedIn:function() {
+    user = Meteor.userId();
+    return user;
+  }
+});
+
+Template.viewPoll.helpers({
   
   polls: function() {
     return Polls.find();
