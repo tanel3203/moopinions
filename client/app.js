@@ -23,6 +23,15 @@ Template.welcome.helpers({
   loggedIn:function() {
     user = Meteor.userId();
     return user;
+  },
+  isAdmin:function() {
+    user = Meteor.userId();
+    if (user == "cSjTrna9KhCWHX4D8") {
+        return true;
+    } else {
+      return false;
+    }
+    
   }
 });
 

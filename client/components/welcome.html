@@ -2,8 +2,11 @@
 
 <h1>Welcome!</h1>
 
+	
+	{{#if isAdmin}}
+		<a href="/create">Create a poll</a> <br>
+	{{/if}}
 	{{#if loggedIn}}
-	<a href="/create">Create a poll</a> <br>
 	<a href="/view">View polls</a>
 	{{else}}
 	<p>Please log in</p>
