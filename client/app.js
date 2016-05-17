@@ -19,14 +19,24 @@ Router.configure({
     this.render("viewPoll", {to:"main"});  
   });
 
+Template.viewPoll.helpers({
+  isAdmin:function() {
+    if (Meteor.user().roles.default[0] === "admin") {
+        return true;
+    } else {
+      return false;
+    }
+    
+  }
+});
+
 Template.welcome.helpers({
   loggedIn:function() {
     user = Meteor.userId();
     return user;
   },
   isAdmin:function() {
-    user = Meteor.userId();
-    if (user == "cSjTrna9KhCWHX4D8") {
+    if (Meteor.user().roles.default[0] === "admin") {
         return true;
     } else {
       return false;

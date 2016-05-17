@@ -1,6 +1,8 @@
 <template name="viewPoll">
       <div class="row">
-        <a href="/create">Create a poll</a>
+      	{{#if isAdmin}}
+        	<a href="/create">Create a poll</a>
+		{{/if}}
     </div>  
   <!-- LOOP OVER POLLS AND SHOW EACH -->
   <div class="polls">
